@@ -1,0 +1,199 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.5") format("woff2"), url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.5") format("woff");
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  font-family: 'Inter UI';
+}
+.right {
+  position: absolute;
+  right: 0;
+  width: 60vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card {
+  width: 370px;
+  height: 230px;
+}
+.flip {
+  width: inherit;
+  height: inherit;
+  transition: 0.7s;
+  transform-style: preserve-3d;
+  -webkit-animation: flip 2.5s ease;
+          animation: flip 2.5s ease;
+}
+.front,
+.back {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 15px;
+  box-shadow: 0 1px 3px 0px rgba(0,0,0,0.3);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: linear-gradient(to right, #f5f5f5, #f7f7f7);
+  overflow: hidden;
+}
+.front {
+  transform: translateZ(0);
+}
+.apple-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 39px;
+  height: 48px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.chip {
+  position: absolute;
+  top: 110px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 40px;
+  border: 1px solid #666;
+  border-radius: 9px;
+  background-color: #ddd;
+  overflow: hidden;
+}
+.chip .pin {
+  position: absolute;
+  width: 22px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+}
+.chip .pin:nth-child(1) {
+  top: 3px;
+  left: 4px;
+}
+.chip .pin:nth-child(2) {
+  top: 14px;
+  left: 4px;
+}
+.chip .pin:nth-child(3) {
+  top: 25px;
+  left: 4px;
+}
+.chip .pin:nth-child(4) {
+  top: 3px;
+  right: 4px;
+}
+.chip .pin:nth-child(5) {
+  top: 14px;
+  right: 4px;
+}
+.chip .pin:nth-child(6) {
+  top: 25px;
+  right: 4px;
+}
+.card-holder {
+  position: absolute;
+  top: 130px;
+  left: 5px;
+  margin: 0px 25px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #555;
+}
+.master {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+}
+.master .circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.master .master-yellow {
+  margin-left: -20px;
+}
+.master .master-text {
+  position: absolute;
+  top: 53px;
+  left: 8px;
+  font-size: 12px;
+  color: #666;
+}
+.card {
+  perspective: 1000;
+}
+.card:active .flip {
+  transform: rotateY(180deg);
+}
+.back {
+  transform: rotateY(180deg) translateZ(0);
+}
+.back .goldman-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 90px;
+}
+.back .strip-black {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #555;
+}
+.info {
+  position: absolute;
+  width: 270px;
+  margin: 50px;
+  text-align: center;
+  color: #aaa;
+  font-family: Helvetica;
+}
+.js-tilt-glare > .js-tilt-glare-inner {
+  background-image: linear-gradient(0deg, rgba(255,255,255,0) 70%, #fff 100%);
+  width: 220px;
+  height: 220px;
+}
+@-webkit-keyframes flip {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes flip {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}
